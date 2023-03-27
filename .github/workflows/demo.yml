@@ -16,10 +16,11 @@ jobs:
      - name: Build the docker image
        run: |
         pwd
+        mkdir tar_file
         docker build -t flask_application . 
         
      - name: Save the docker image
-       run: docker save flask_application > Deploy/flask_application.tar.gz
+       run: docker save flask_application > tar_file/flask_application.tar.gz
         
      - name: test
        run: echo "tests"
@@ -32,7 +33,7 @@ jobs:
        uses: actions/upload-artifact@v3.1.2
        with:
         name: artifacts
-        path: /home/runner/work/python-flask/python-flask/Deploy
+        path: /home/runner/work/python-flask/python-flask/tar_file
     
   Job2:   
     name: Deploy
