@@ -58,6 +58,7 @@ jobs:
        run: |
         docker load -i flask_application.tar.gz
         ls
+        docker-compose up -d
       
 
 
