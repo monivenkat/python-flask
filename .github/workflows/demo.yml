@@ -33,7 +33,7 @@ jobs:
        uses: actions/upload-artifact@v3.1.2
        with:
         name: artifacts
-        path: /home/runner/work/python-flask/Flask_application/push_to_artifactory
+        path: /home/runner/work/python-flask/python-flask/push_to_artifactory
     
   Job2:   
     name: Deploy
