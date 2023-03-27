@@ -15,6 +15,7 @@ jobs:
         
      - name: Build the docker image
        run: |
+        pwd
         mkdir push_to_artifactory
         docker build -t flask_application . 
         
@@ -45,9 +46,3 @@ jobs:
        with:
         name: artifacts
         
-     - name: Deploy
-       env:
-          SERVER_IP: ${{ secrets.SERVER_IP }}
-          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
-          SERVER_SSHKEY: ${{ secrets.SERVER_SSHKEY }}
-       run: docker load -i flask_application.tar.gz
