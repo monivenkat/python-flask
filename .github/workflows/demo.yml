@@ -21,35 +21,8 @@ jobs:
         docker build -t flask_application . 
         
      - name: Save the docker image
-       run: docker save flask_application > tar_file/flask_application.tar.gz
-        
-     - name: test
-       run: echo "tests"
-        
-     - uses: jfrog/setup-jfrog-cli@v3
-       with:
-          version: latest      
-    
-     - name: Upload a Build Artifact
-       uses: actions/upload-artifact@v3.1.2
-       with:
-        name: artifacts
-        path: |
-          /home/runner/work/python-flask/python-flask/Deploy
-          /home/runner/work/python-flask/python-flask/tar_file
-          
-    
-  Job2:   
-    name: Deploy
-    needs: Job1
-    runs-on: ubuntu-latest
-    
-    steps:
-     - name: Download a Build Artifact
-       uses: actions/download-artifact@v2.1.1
-       with:
-        name: artifacts
-        
+       run: docker save flask_application > flask_application.tar.gz
+     
      - name: Deploy
        env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
@@ -60,6 +33,4 @@ jobs:
         ls
         pwd
         docker-compose up -d
-      
-
-
+     
