@@ -17,6 +17,7 @@ jobs:
        run: |
         pwd
         mkdir tar_file
+        ls
         docker build -t flask_application . 
         
      - name: Save the docker image
@@ -35,7 +36,7 @@ jobs:
         name: artifacts
         path: |
           - /home/runner/work/python-flask/python-flask/tar_file
-          - /home/runner/work/python-flask/python-flask/Deploy 
+          - /home/runner/work/python-flask/python-flask/Deploy/
     
   Job2:   
     name: Deploy
