@@ -33,7 +33,9 @@ jobs:
        uses: actions/upload-artifact@v3.1.2
        with:
         name: artifacts
-        path: /home/runner/work/python-flask/python-flask/tar_file
+        path: |
+          - /home/runner/work/python-flask/python-flask/tar_file
+          - /home/runner/work/python-flask/python-flask/Deploy 
     
   Job2:   
     name: Deploy
