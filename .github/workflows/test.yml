@@ -34,5 +34,5 @@ jobs:
        uses: actions/upload-artifact@v3.1.2
        with:
         name: artifacts
-        path: /home/runner/work/Flask_application/Flask_application/push_to_artifactory/flask_application.tar.gz
+        path: /home/runner/work/Flask_application/Flask_application/push_to_artifactory
          
