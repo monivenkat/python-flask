@@ -20,7 +20,7 @@ jobs:
         
      - name: Save the docker image
        run: |
-        docker save flask_application > flask_application.tar.gz
+        docker save flask_application > push_to_artifactory/flask_application.tar.gz
         ls
         
      - name: test
@@ -35,5 +35,5 @@ jobs:
        with:
         name: artifacts
         path: |
-          /home/runner/work/Flask_application/Flask_application
-          /home/runner/work/Flask_application/Flask_application/Deploy
+          /home/runner/work/Flask_application/Flask_application/push_to_artifactory
+         
