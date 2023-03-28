@@ -32,8 +32,8 @@ jobs:
           version: latest      
     
      - name: Upload a Build Artifact
-       uses: actions/upload-artifact@v3.1.2
+       uses: actions/upload-artifact@v3
        with:
-        name: artifacts
+        name: artifact
         path: /home/runner/work/Flask_application/Flask_application/Deploy
          
