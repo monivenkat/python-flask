@@ -19,7 +19,9 @@ jobs:
         docker build -t flask_application . 
         
      - name: Save the docker image
-       run: docker save flask_application > flask_application.tar.gz
+       run: |
+        docker save flask_application > flask_application.tar.gz
+        ls
         
      - name: test
        run: echo "tests"
